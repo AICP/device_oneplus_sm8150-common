@@ -312,7 +312,8 @@ PRODUCT_ENFORCE_RRO_TARGETS := *
 PRODUCT_PACKAGES += \
     CarrierConfigResCommon \
     FrameworksResTarget \
-    OPlusFrameworksResCommon
+    OPlusFrameworksResCommon \
+    OPlusSystemUIResCommon
 
 # Power
 PRODUCT_PACKAGES += \
