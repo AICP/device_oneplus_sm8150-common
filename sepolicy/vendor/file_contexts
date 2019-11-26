@@ -3,6 +3,7 @@
 /(vendor|system/vendor)/bin/wifi-mac-generator    u:object_r:wifi-mac-generator_exec:s0
 
 # Block devices
+/dev/block/platform/soc/1d84000\.ufshc/by-name/config         u:object_r:frp_block_device:s0
 /dev/block/platform/soc/1d84000\.ufshc/by-name/oem_dycnvbk    u:object_r:oem_block_device:s0
 /dev/block/platform/soc/1d84000\.ufshc/by-name/oem_stanvbk    u:object_r:oem_block_device:s0
 /dev/block/platform/soc/1d84000\.ufshc/by-name/param          u:object_r:param_block_device:s0
@@ -13,12 +14,15 @@
 /data/vendor/oemnvitems/4678_1    u:object_r:wifi_nv_data_file:s0
 
 # Devices
+/dev/audio_ultrasound     u:object_r:ultrasound_device:s0
 /dev/dash                 u:object_r:dash_device:s0
 /dev/elliptic0            u:object_r:sensors_device:s0
 /dev/elliptic1            u:object_r:sensors_device:s0
 /dev/goodix_fp            u:object_r:fingerprintd_device:s0
 /dev/p73                  u:object_r:nfc_device:s0
 /dev/param                u:object_r:param_device:s0
+/dev/pn553                u:object_r:nfc_device:s0
+/dev/sensor_ultrasound    u:object_r:ultrasound_device:s0
 /dev/silead_fp            u:object_r:fingerprintd_device:s0
 /dev/stmvl53l1_ranging    u:object_r:vl53l1_device:s0
 
@@ -59,6 +63,3 @@
 /sys/module/fsc(/.*)?                                              u:object_r:sysfs_fsc:s0
 /sys/module/stmvl53l1(/.*)?                                        u:object_r:sysfs_vl53l1:s0
 /sys/project_info(/.*)?                                            u:object_r:sysfs_project_info:s0
-
-# Vendor files
-/vendor/usr/keylayout(/.*)?    u:object_r:keylayout_file:s0
