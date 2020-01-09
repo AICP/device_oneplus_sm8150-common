@@ -19,11 +19,13 @@ PRODUCT_COPY_FILES += \
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-aicp
+    $(LOCAL_PATH)/overlay
 
 PRODUCT_ENFORCE_RRO_TARGETS := \
     framework-res
+
+PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
+    $(LOCAL_PATH)/overlay/packages/apps/Snap
 
 # A/B
 AB_OTA_UPDATER := true
