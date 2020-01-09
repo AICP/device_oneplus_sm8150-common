@@ -1,3 +1,6 @@
+# Enable ADB
+ro.adb.secure=0
+
 # Audio
 audio.offload.min.duration.secs=30
 persist.vendor.audio.hac.enable=false
@@ -107,7 +110,7 @@ ro.nfc.port=I2C
 ro.vendor.qti.sys.fw.bg_apps_limit=60
 
 # Priv-app permissions whitelist
-ro.control_privapp_permissions=enforce
+#ro.control_privapp_permissions=enforce
 
 # Radio
 DEVICE_PROVISIONED=1
