@@ -14,30 +14,37 @@
  * limitations under the License.
  */
 
-#define LOG_TAG "vendor.lineage.touch@1.0-service.oneplus_msmnile"
+#define LOG_TAG "vendor.lineage.camera.motor@1.0-service.msmnile"
 
 #include <android-base/logging.h>
-#include <binder/ProcessState.h>
 #include <hidl/HidlTransportSupport.h>
-#include "TouchscreenGesture.h"
 
-using ::vendor::lineage::touch::V1_0::ITouchscreenGesture;
-using ::vendor::lineage::touch::V1_0::implementation::TouchscreenGesture;
+#include "CameraMotor.h"
+
+using android::hardware::configureRpcThreadpool;
+using android::hardware::joinRpcThreadpool;
+
+using vendor::lineage::camera::motor::V1_0::ICameraMotor;
+using vendor::lineage::camera::motor::V1_0::implementation::CameraMotor;
+
+using android::OK;
+using android::status_t;
 
 int main() {
-    android::sp<ITouchscreenGesture> gestureService = new TouchscreenGesture();
+    android::sp<ICameraMotor> service = new CameraMotor();
 
-    android::hardware::configureRpcThreadpool(1, true /*callerWillJoin*/);
+    configureRpcThreadpool(1, true);
 
-    if (gestureService->registerAsService() != android::OK) {
-        LOG(ERROR) << "Cannot register touchscreen gesture HAL service.";
+    status_t status = service->registerAsService();
+    if (status != OK) {
+        LOG(ERROR) << "Cannot register Camera Motor HAL service.";
         return 1;
     }
 
-    LOG(INFO) << "Touchscreen HAL service ready.";
+    LOG(INFO) << "Camera Motor HAL service ready.";
 
-    android::hardware::joinRpcThreadpool();
+    joinRpcThreadpool();
 
-    LOG(ERROR) << "Touchscreen HAL service failed to join thread pool.";
+    LOG(ERROR) << "FOD HAL service failed to join thread pool.";
     return 1;
 }
