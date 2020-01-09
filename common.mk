@@ -238,6 +238,10 @@ PRODUCT_PACKAGES += \
     vendor.display.config@1.7 \
     vendor.qti.hardware.display.allocator@1.0-service
 
+# DeviceSettings / Keyhandler / Displaymodes
+PRODUCT_PACKAGES += \
+    DeviceSettings
+
 # Doze
 PRODUCT_PACKAGES += \
     OnePlusDoze
@@ -433,7 +437,6 @@ PRODUCT_PACKAGES += \
 
 # tri-state key
 PRODUCT_PACKAGES += \
-    KeyHandler \
     tri-state-key_daemon
 
 # Update engine

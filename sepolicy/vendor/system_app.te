@@ -1,0 +1,14 @@
+allow system_app sysfs_dm:file rw_file_perms;
+
+allow system_app sysfs_leds:file rw_file_perms;
+allow system_app sysfs_leds:dir { search };
+
+# Allow system_app to read directories and attributes of sysfs_vibrator
+allow system_app sysfs_vibrator:dir { search read };
+# Allow system_app to read and write to sysfs_vibrator
+allow system_app sysfs_vibrator:file rw_file_perms;
+
+allow system_app fs_bpf:dir { search };
+
+# Allow system_app to read, open and get attributes of sysfs_graphics
+allow system_app sysfs_graphics:file { getattr open read };
