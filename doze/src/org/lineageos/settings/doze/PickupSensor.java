@@ -46,7 +46,9 @@ public class PickupSensor implements SensorEventListener {
     public PickupSensor(Context context) {
         mContext = context;
         mSensorManager = mContext.getSystemService(SensorManager.class);
-        mSensor = Utils.getSensor(mSensorManager, "oneplus.sensor.pickup");
+        mSensor = Utils.getSensor(mSensorManager, "oneplus.sensor.op_motion_detect");
+        /* Try and use the motionsensor (tilt) event and not the pickupsensor:
+        * mSensor = Utils.getSensor(mSensorManager, "oneplus.sensor.pickup"); */
         mExecutorService = Executors.newSingleThreadExecutor();
     }
 
