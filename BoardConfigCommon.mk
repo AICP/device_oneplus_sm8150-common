@@ -19,12 +19,16 @@ TARGET_2ND_ARCH := arm
 TARGET_2ND_ARCH_VARIANT := armv8-a
 TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
-TARGET_2ND_CPU_VARIANT := cortex-a75
+TARGET_2ND_CPU_VARIANT := kryo
 
+TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
 TARGET_USES_64_BIT_BINDER := true
+TARGET_COMPILE_WITH_MSM_KERNEL := true
 
 ENABLE_CPUSETS := true
 ENABLE_SCHEDBOOST := true
+# Disable secure discard
+BOARD_SUPPRESS_SECURE_ERASE := true
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := msmnile
@@ -34,6 +38,7 @@ TARGET_USES_UEFI := true
 # Kernel
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom androidboot.console=ttyMSM0 androidboot.memcg=1 lpm_levels.sleep_disabled=1 video=vfb:640x400,bpp=32,memsize=3072000 msm_rtb.filter=0x237 service_locator.enable=1 swiotlb=2048 firmware_class.path=/vendor/firmware_mnt/image loop.max_part=7 androidboot.usbcontroller=a600000.dwc3
+# Necessary for OTA checking only (temporarily)
 BOARD_KERNEL_CMDLINE += androidboot.vbmeta.avb_version=1.0
 BOARD_KERNEL_IMAGE_NAME := Image-dtb
 BOARD_KERNEL_PAGESIZE := 4096
@@ -46,10 +51,8 @@ TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_CLANG_COMPILE := true
 TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_SOURCE := kernel/oneplus/sm8150
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
+# for Q: TARGET_KERNEL_CLANG_VERSION := r365631c
 TARGET_KERNEL_CLANG_VERSION := 9.0.8
-KBUILD_COMPILER_STRING := Android (5900059 based on r365631c) clang version 9.0.8
-export KBUILD_COMPILER_STRING
 
 # Platform
 BOARD_USES_QCOM_HARDWARE := true
@@ -57,7 +60,7 @@ QCOM_BOARD_PLATFORMS += msmnile
 TARGET_BOARD_PLATFORM := msmnile
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno640
 TARGET_USES_HARDWARE_QCOM_BOOTCTRL := true
-TARGET_USES_QCOM_BSP := true
+TARGET_USES_QCOM_BSP := false
 
 # Properties
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
@@ -84,6 +87,11 @@ USE_XML_AUDIO_POLICY_CONF := 1
 # Camera
 TARGET_USES_QTI_CAMERA_DEVICE := true
 USE_DEVICE_SPECIFIC_CAMERA := true
+#TARGET_USES_QTI_CAMERA2CLIENT := true
+#TARGET_CAMERA_NEEDS_CLIENT_INFO := true
+#USE_CAMERA_STUB := true
+#TARGET_USES_MEDIA_EXTENSIONS := false
+TARGET_CAMERA_BOOTTIME_TIMESTAMP := true
 
 # Charger
 BOARD_CHARGER_ENABLE_SUSPEND := true
@@ -108,6 +116,9 @@ TARGET_USES_DRM_PP := true
 TARGET_USES_GRALLOC1 := true
 TARGET_USES_HWC2 := true
 TARGET_USES_ION := true
+TARGET_USES_NEW_ION_API :=true
+TARGET_USES_OVERLAY := true
+USE_OPENGL_RENDERER := true
 
 MAX_EGL_CACHE_KEY_SIZE := 12*1024
 MAX_EGL_CACHE_SIZE := 2048*1024
@@ -184,6 +195,9 @@ SOONG_CONFIG_ONEPLUS_MSMNILE_SENSORS := ALS_POS_X ALS_POS_Y
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += $(VENDOR_PATH)
 
+# Telephony
+TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
+
 # Verified Boot
 BOARD_AVB_ENABLE := true
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --set_hashtree_disabled_flag
@@ -201,3 +215,6 @@ WIFI_DRIVER_STATE_OFF := "OFF"
 WIFI_DRIVER_STATE_ON := "ON"
 WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
 WPA_SUPPLICANT_VERSION := VER_0_8_X
+
+# Inherit from the proprietary version
+-include vendor/oneplus/sm8150-common/BoardConfigVendor.mk
