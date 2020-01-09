@@ -10,5 +10,8 @@ allow init { op1_file op2_file }:dir mounton;
 # Allow init to contextmount op1_file
 allow op1_file self:filesystem associate;
 
+# Allow init to execute vendor files
+allow init vendor_file:file execute;
+
 # Allow init to create vl53l1_socket
 allow init vl53l1_socket:sock_file create_file_perms;
