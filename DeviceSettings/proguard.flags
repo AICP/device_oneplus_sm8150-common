@@ -1,0 +1,7 @@
+-keepclasseswithmembers class * {
+    public <init>(android.content.Context, android.util.AttributeSet);
+}
+-keep public class com.aicp.device.DeviceSettings
+-keepclassmembers public class com.aicp.device.DeviceSettings {
+    *;
+}
