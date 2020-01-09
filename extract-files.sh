@@ -65,8 +65,17 @@ fi
 # Initialize the helper for common device
 setup_vendor "${DEVICE_COMMON}" "${VENDOR}" "${AICP_ROOT}" true "${CLEAN_VENDOR}"
 
+extract "${MY_DIR}"/proprietary-files-qc.txt "${SRC}" "${SECTION}"
+extract "${MY_DIR}"/proprietary-files-qc-perf.txt "${SRC}" "${SECTION}"
 extract "${MY_DIR}/proprietary-files.txt" "${SRC}" \
         "${KANG}" --section "${SECTION}"
+
+if [ -s "${MY_DIR}"/../${DEVICE}/proprietary-files.txt ]; then
+    # Reinitialize the helper for device
+    setup_vendor "${DEVICE}" "${VENDOR}" "${AICP_ROOT}" false "${CLEAN_VENDOR}"
+
+    extract "${MY_DIR}"/../${DEVICE}/proprietary-files.txt "${SRC}" "${SECTION}"
+fi
 
 COMMON_BLOB_ROOT="${AICP_ROOT}/vendor/${VENDOR}/${DEVICE_COMMON}/proprietary"
 
