@@ -1,4 +1,8 @@
 # Allow system_server to read keylayout_file
 r_dir_file(system_server, keylayout_file)
 
+<<<<<<< Updated upstream
 allow system_server sysfs_battery_supply:file { read open };
+=======
+allow system_server sysfs_battery_supply:file { getattr read open };
+>>>>>>> Stashed changes
