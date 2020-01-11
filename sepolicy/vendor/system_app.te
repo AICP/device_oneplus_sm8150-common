@@ -12,8 +12,6 @@ allow system_app fs_bpf:dir { search };
 
 # Allow system_app to read, open and get attributes of sysfs_graphics
 allow system_app sysfs_graphics:file { getattr open read };
-<<<<<<< Updated upstream
-=======
 
 allow system_app bg_boot_complete_prop:file read;
 
@@ -28,4 +26,3 @@ allow system_app boottime_prop:file read;
 allow system_app cnd_vendor_prop:file read;
 
 allow system_app console_silent_prop:file read;
->>>>>>> Stashed changes
