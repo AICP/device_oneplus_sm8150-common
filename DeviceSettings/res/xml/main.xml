@@ -15,14 +15,29 @@
         android:key="audio"
         android:title="@string/audio_title">
 
+        <SwitchPreference
+            android:key="enable_dolby_atmos"
+            android:summary="@string/enable_dolby_summary"
+            android:title="@string/enable_dolby_title"
+            android:icon="@drawable/ic_dolby"
+            android:defaultValue="true"
+            android:persistent="true" />
+
         <Preference
-            android:title="@string/dolby_title"
-            android:summary="@string/dolby_summary"
-            android:icon="@drawable/ic_dolby" >
+          android:key="dolby_atmos"
+          android:title="@string/dolby_title"
+          android:summary="@string/dolby_summary"
+          android:dependency="enable_dolby_atmos"
+          android:persistent="false" >
             <intent
                  android:targetPackage="com.oneplus.sound.tuner"
                  android:targetClass="com.oneplus.sound.tuner.panoramic.DolbyPanoramicSoundActivity" />
         </Preference>
+
+        <Preference
+            android:icon="@drawable/ic_info"
+            android:persistent="false"
+            android:summary="@string/enable_dolby_info" />
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -96,6 +111,10 @@
             android:title="@string/vib_strength_title_head"
             android:summary="@string/vib_strength_summary_head"
             android:icon="@drawable/ic_vibration" />
-    </PreferenceCategory>
 
+        <Preference
+            android:icon="@drawable/ic_info"
+            android:persistent="false"
+            android:summary="@string/vib_strength_info" />
+    </PreferenceCategory>
 </PreferenceScreen>
