@@ -11,6 +11,8 @@ VENDOR_PATH := device/oneplus/sm8150-common
 # Assertion
 TARGET_SPECIFIC_HEADER_PATH := $(VENDOR_PATH)/include
 TARGET_INIT_VENDOR_LIB := libinit_oneplus_msmnile
+TARGET_RECOVERY_DEVICE_MODULES := libinit_oneplus_msmnile
+TARGET_PLATFORM_DEVICE_BASE := /devices/soc/
 
 # Architecture
 TARGET_ARCH := arm64

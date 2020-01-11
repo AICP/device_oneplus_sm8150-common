@@ -73,24 +73,28 @@ void vendor_load_properties()
         property_override("ro.bootimage.build.fingerprint", "OnePlus/OnePlus7Pro/OnePlus7Pro:9/PKQ1.190110.001/1907281556:user/release-keys");
         property_override("ro.build.description", "OnePlus7Pro-user 9 PKQ1.190110.001 1907281556 release-keys");
         property_override("ro.build.model", "GM1913");
+        property_override("ro.display.series", "OnePlus 7 Pro");
     }
     if (name == "OnePlus7Pro") {
         property_override("ro.build.fingerprint", "OnePlus/OnePlus7Pro/OnePlus7Pro:9/PKQ1.190110.001/1907281556:user/release-keys");
         property_override("ro.bootimage.build.fingerprint", "OnePlus/OnePlus7Pro/OnePlus7Pro:9/PKQ1.190110.001/1907281556:user/release-keys");
         property_override("ro.build.description", "OnePlus7Pro-user 9 PKQ1.190110.001 1907281556 release-keys");
         property_override("ro.build.model", "GM1917");
+        property_override("ro.display.series", "OnePlus 7 Pro");
     }
     if (name == "OnePlus7_EEA") {
         property_override("ro.build.fingerprint", "OnePlus/OnePlus7_EEA/OnePlus7:9/PKQ1.190110.001/1907280700:user/release-keys");
         property_override("ro.bootimage.build.fingerprint", "OnePlus/OnePlus7/OnePlus7:9/PKQ1.190110.001/1907280700:user/release-keys");
         property_override("ro.build.description", "OnePlus7-user 9 PKQ1.190110.001 1907280700 release-keys");
         property_override("ro.build.model", "GM1903");
+        property_override("ro.display.series", "OnePlus 7");
     }
     if (name == "OnePlus7") {
         property_override("ro.build.fingerprint", "OnePlus/OnePlus7/OnePlus7:9/PKQ1.190110.001/1907280700:user/release-keys");
         property_override("ro.bootimage.build.fingerprint", "OnePlus/OnePlus7/OnePlus7:9/PKQ1.190110.001/1907280700:user/release-keys");
         property_override("ro.build.description", "OnePlus7-user 9 PKQ1.190110.001 1907280700 release-keys");
         property_override("ro.build.model", "GM1901");
+        property_override("ro.display.series", "OnePlus 7");
     }
     /*Check for kgsl node and disable HW composition*/
     if (access("/dev/kgsl-3d0", F_OK) < 0) {
