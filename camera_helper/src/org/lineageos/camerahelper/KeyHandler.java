@@ -26,7 +26,24 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.WindowManager;
 
+import android.app.ActivityManagerNative;
+import android.content.ActivityNotFoundException;
+import android.content.ContentResolver;
+import android.Manifest;
+import android.app.NotificationManager;
+import android.content.BroadcastReceiver;
+import android.database.ContentObserver;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
+import android.os.Message;
+import android.os.RemoteException;
+
 import com.android.internal.os.DeviceKeyHandler;
+
+import com.android.internal.util.gzosp.ActionConstants;
+import com.android.internal.util.gzosp.Action;
 
 public class KeyHandler implements DeviceKeyHandler {
     private static final String TAG = KeyHandler.class.getSimpleName();

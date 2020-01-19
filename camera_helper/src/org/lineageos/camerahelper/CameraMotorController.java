@@ -24,49 +24,49 @@ import java.io.File;
 import java.io.IOException;
 
 public class CameraMotorController {
-    private static final String TAG = "CameraMotorController";
+   private static final String TAG = "CameraMotorController";
 
-    // Camera motor paths
-    private static final String CAMERA_MOTOR_ENABLE_PATH =
-            "/sys/devices/platform/vendor/vendor:motor_pl/enable";
-    private static final String CAMERA_MOTOR_DIRECTION_PATH =
-            "/sys/devices/platform/vendor/vendor:motor_pl/direction";
-    private static final String CAMERA_MOTOR_POSITION_PATH =
-            "/sys/devices/platform/vendor/vendor:motor_pl/position";
+   // Camera motor paths
+   private static final String CAMERA_MOTOR_ENABLE_PATH =
+           "/sys/devices/platform/vendor/vendor:motor_pl/enable";
+   private static final String CAMERA_MOTOR_DIRECTION_PATH =
+           "/sys/devices/platform/vendor/vendor:motor_pl/direction";
+   private static final String CAMERA_MOTOR_POSITION_PATH =
+           "/sys/devices/platform/vendor/vendor:motor_pl/position";
 
-    // Motor control values
-    public static final String DIRECTION_DOWN = "0";
-    public static final String DIRECTION_UP = "1";
-    public static final String ENABLED = "1";
-    public static final String POSITION_DOWN = "1";
-    public static final String POSITION_UP = "0";
+   // Motor control values
+   public static final String DIRECTION_DOWN = "0";
+   public static final String DIRECTION_UP = "1";
+   public static final String ENABLED = "1";
+   public static final String POSITION_DOWN = "1";
+   public static final String POSITION_UP = "0";
 
-    private CameraMotorController() {
-        // This class is not supposed to be instantiated
-    }
+   private CameraMotorController() {
+       // This class is not supposed to be instantiated
+   }
 
-    public static void setMotorDirection(String direction) {
-        try {
-            FileUtils.stringToFile(CAMERA_MOTOR_DIRECTION_PATH, direction);
-        } catch (IOException e) {
-            Log.e(TAG, "Failed to write to " + CAMERA_MOTOR_DIRECTION_PATH, e);
-        }
-    }
+   public static void setMotorDirection(String direction) {
+       try {
+           FileUtils.stringToFile(CAMERA_MOTOR_DIRECTION_PATH, direction);
+       } catch (IOException e) {
+           Log.e(TAG, "Failed to write to " + CAMERA_MOTOR_DIRECTION_PATH, e);
+       }
+   }
 
-    public static void setMotorEnabled() {
-        try {
-            FileUtils.stringToFile(CAMERA_MOTOR_ENABLE_PATH, ENABLED);
-        } catch (IOException e) {
-            Log.e(TAG, "Failed to write to " + CAMERA_MOTOR_ENABLE_PATH, e);
-        }
-    }
+   public static void setMotorEnabled() {
+       try {
+           FileUtils.stringToFile(CAMERA_MOTOR_ENABLE_PATH, ENABLED);
+       } catch (IOException e) {
+           Log.e(TAG, "Failed to write to " + CAMERA_MOTOR_ENABLE_PATH, e);
+       }
+   }
 
-    public static String getMotorPosition() {
-        try {
-            return FileUtils.readTextFile(new File(CAMERA_MOTOR_POSITION_PATH), 1, null);
-        } catch (IOException e) {
-            Log.e(TAG, "Failed to read to " + CAMERA_MOTOR_POSITION_PATH, e);
-        }
-        return null;
-    }
+   public static String getMotorPosition() {
+       try {
+           return FileUtils.readTextFile(new File(CAMERA_MOTOR_POSITION_PATH), 1, null);
+       } catch (IOException e) {
+           Log.e(TAG, "Failed to read to " + CAMERA_MOTOR_POSITION_PATH, e);
+       }
+       return null;
+   }
 }
