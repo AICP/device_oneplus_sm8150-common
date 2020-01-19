@@ -1,2 +1,4 @@
+allow init sysfs_type:file { setattr };
+
 # Allow init to write the properties
 allow init property_socket:sock_file write;
