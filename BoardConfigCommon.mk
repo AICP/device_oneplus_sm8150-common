@@ -11,8 +11,6 @@ VENDOR_PATH := device/oneplus/sm8150-common
 # Assertion
 TARGET_SPECIFIC_HEADER_PATH := $(VENDOR_PATH)/include
 TARGET_INIT_VENDOR_LIB := libinit_oneplus_msmnile
-TARGET_RECOVERY_DEVICE_MODULES := libinit_oneplus_msmnile
-TARGET_PLATFORM_DEVICE_BASE := /devices/soc/
 
 # Architecture
 TARGET_ARCH := arm64
@@ -93,11 +91,6 @@ USE_XML_AUDIO_POLICY_CONF := 1
 # Camera
 TARGET_USES_QTI_CAMERA_DEVICE := true
 USE_DEVICE_SPECIFIC_CAMERA := true
-#TARGET_USES_QTI_CAMERA2CLIENT := true
-#TARGET_CAMERA_NEEDS_CLIENT_INFO := true
-#USE_CAMERA_STUB := true
-#TARGET_USES_MEDIA_EXTENSIONS := false
-#TARGET_CAMERA_BOOTTIME_TIMESTAMP := true
 
 # Charger
 BOARD_CHARGER_ENABLE_SUSPEND := true
@@ -190,7 +183,7 @@ TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
 TARGET_RIL_VARIANT := caf
 
 # Security patch level
-VENDOR_SECURITY_PATCH := 2019-08-01
+VENDOR_SECURITY_PATCH := 2019-08-05
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
