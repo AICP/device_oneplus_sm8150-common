@@ -26,22 +26,29 @@
    IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <fcntl.h>
-#include <unistd.h>
-#include <android-base/properties.h>
-#include <android-base/logging.h>
-#include "property_service.h"
-#include "vendor_init.h"
-#include <sys/resource.h>
-#define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
-#include <sys/_system_properties.h>
+ #include <fcntl.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <unistd.h>
+ #include <sys/stat.h>
+ #include <sys/types.h>
+
+ #include <android-base/file.h>
+ #include <android-base/logging.h>
+ #include <android-base/properties.h>
+ #include <android-base/strings.h>
+
+ #define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
+ #include <sys/_system_properties.h>
+
+ #include "vendor_init.h"
+ #include "property_service.h"
 
 namespace android {
 namespace init {
 
 using android::base::GetProperty;
+using android::base::ReadFileToString;
 using android::init::property_set;
 
 void property_override(const std::string& name, const std::string& value)
@@ -69,32 +76,32 @@ void vendor_load_properties()
     name = android::base::GetProperty("ro.product.vendor.name", "");
     LOG(INFO) << name;
     if (name == "OnePlus7Pro_EEA") {
-        property_override("ro.build.fingerprint", "OnePlus/OnePlus7Pro_EEA/OnePlus7Pro:9/PKQ1.190110.001/1907281556:user/release-keys");
-        property_override("ro.bootimage.build.fingerprint", "OnePlus/OnePlus7Pro/OnePlus7Pro:9/PKQ1.190110.001/1907281556:user/release-keys");
-        property_override("ro.build.description", "OnePlus7Pro-user 9 PKQ1.190110.001 1907281556 release-keys");
-        property_override("ro.build.model", "GM1913");
-        property_override("ro.display.series", "OnePlus 7 Pro");
+        property_set("ro.build.fingerprint", "OnePlus/OnePlus7Pro_EEA/OnePlus7Pro:9/PKQ1.190110.001/1907281556:user/release-keys");
+        property_set("ro.bootimage.build.fingerprint", "OnePlus/OnePlus7Pro/OnePlus7Pro:9/PKQ1.190110.001/1907281556:user/release-keys");
+        property_set("ro.build.description", "OnePlus7Pro-user 9 PKQ1.190110.001 1907281556 release-keys");
+        property_set("ro.build.model", "GM1913");
+        property_set("ro.display.series", "OnePlus 7 Pro");
     }
     if (name == "OnePlus7Pro") {
-        property_override("ro.build.fingerprint", "OnePlus/OnePlus7Pro/OnePlus7Pro:9/PKQ1.190110.001/1907281556:user/release-keys");
-        property_override("ro.bootimage.build.fingerprint", "OnePlus/OnePlus7Pro/OnePlus7Pro:9/PKQ1.190110.001/1907281556:user/release-keys");
-        property_override("ro.build.description", "OnePlus7Pro-user 9 PKQ1.190110.001 1907281556 release-keys");
-        property_override("ro.build.model", "GM1917");
-        property_override("ro.display.series", "OnePlus 7 Pro");
+        property_set("ro.build.fingerprint", "OnePlus/OnePlus7Pro/OnePlus7Pro:9/PKQ1.190110.001/1907281556:user/release-keys");
+        property_set("ro.bootimage.build.fingerprint", "OnePlus/OnePlus7Pro/OnePlus7Pro:9/PKQ1.190110.001/1907281556:user/release-keys");
+        property_set("ro.build.description", "OnePlus7Pro-user 9 PKQ1.190110.001 1907281556 release-keys");
+        property_set("ro.build.model", "GM1917");
+        property_set("ro.display.series", "OnePlus 7 Pro");
     }
     if (name == "OnePlus7_EEA") {
-        property_override("ro.build.fingerprint", "OnePlus/OnePlus7_EEA/OnePlus7:9/PKQ1.190110.001/1907280700:user/release-keys");
-        property_override("ro.bootimage.build.fingerprint", "OnePlus/OnePlus7/OnePlus7:9/PKQ1.190110.001/1907280700:user/release-keys");
-        property_override("ro.build.description", "OnePlus7-user 9 PKQ1.190110.001 1907280700 release-keys");
-        property_override("ro.build.model", "GM1903");
-        property_override("ro.display.series", "OnePlus 7");
+        property_set("ro.build.fingerprint", "OnePlus/OnePlus7_EEA/OnePlus7:9/PKQ1.190110.001/1907280700:user/release-keys");
+        property_set("ro.bootimage.build.fingerprint", "OnePlus/OnePlus7/OnePlus7:9/PKQ1.190110.001/1907280700:user/release-keys");
+        property_set("ro.build.description", "OnePlus7-user 9 PKQ1.190110.001 1907280700 release-keys");
+        property_set("ro.build.model", "GM1903");
+        property_set("ro.display.series", "OnePlus 7");
     }
     if (name == "OnePlus7") {
-        property_override("ro.build.fingerprint", "OnePlus/OnePlus7/OnePlus7:9/PKQ1.190110.001/1907280700:user/release-keys");
-        property_override("ro.bootimage.build.fingerprint", "OnePlus/OnePlus7/OnePlus7:9/PKQ1.190110.001/1907280700:user/release-keys");
-        property_override("ro.build.description", "OnePlus7-user 9 PKQ1.190110.001 1907280700 release-keys");
-        property_override("ro.build.model", "GM1901");
-        property_override("ro.display.series", "OnePlus 7");
+        property_set("ro.build.fingerprint", "OnePlus/OnePlus7/OnePlus7:9/PKQ1.190110.001/1907280700:user/release-keys");
+        property_set("ro.bootimage.build.fingerprint", "OnePlus/OnePlus7/OnePlus7:9/PKQ1.190110.001/1907280700:user/release-keys");
+        property_set("ro.build.description", "OnePlus7-user 9 PKQ1.190110.001 1907280700 release-keys");
+        property_set("ro.build.model", "GM1901");
+        property_set("ro.display.series", "OnePlus 7");
     }
     /*Check for kgsl node and disable HW composition*/
     if (access("/dev/kgsl-3d0", F_OK) < 0) {
