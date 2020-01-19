@@ -23,7 +23,7 @@ import android.content.SharedPreferences;
 import android.service.quicksettings.TileService;
 import android.support.v7.preference.PreferenceManager;
 
-import com.aicp.device.DeviceSettings.FileUtils;
+import com.aicp.device.DeviceSettings.Utils;
 
 @TargetApi(24)
 public class DCModeTileService extends TileService {
@@ -57,7 +57,7 @@ public class DCModeTileService extends TileService {
         super.onClick();
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
         final boolean enabled = DCModeSwitch.isCurrentlyEnabled(this);
-        FileUtils.writeValue(DCModeSwitch.getFile(), enabled ? "0" : "1");
+        Utils.writeValue(DCModeSwitch.getFile(), enabled ? "0" : "1");
         sharedPrefs.edit().putBoolean(DeviceSettings.KEY_DC_SWITCH, enabled ? false : true).commit();
     }
 }

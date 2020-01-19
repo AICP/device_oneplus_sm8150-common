@@ -24,31 +24,31 @@ import android.support.v7.preference.Preference;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.support.v7.preference.PreferenceManager;
 
-import com.aicp.device.DeviceSettings.FileUtils;
+import com.aicp.device.DeviceSettings.Utils;
 
 public class WideColorModeSwitch implements OnPreferenceChangeListener {
 
     private static final String FILE = "/sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/native_display_wide_color_mode";
 
     public static String getFile() {
-        if (FileUtils.fileWritable(FILE)) {
+        if (Utils.fileWritable(FILE)) {
             return FILE;
         }
         return null;
     }
 
     public static boolean isSupported() {
-        return FileUtils.fileWritable(getFile());
+        return Utils.fileWritable(getFile());
     }
 
     public static boolean isCurrentlyEnabled(Context context) {
-        return FileUtils.getFileValueAsBoolean(getFile(), false);
+        return Utils.getFileValueAsBoolean(getFile(), false);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         Boolean enabled = (Boolean) newValue;
-        FileUtils.writeValue(getFile(), enabled ? "1" : "0");
+        Utils.writeValue(getFile(), enabled ? "1" : "0");
         return true;
     }
 }

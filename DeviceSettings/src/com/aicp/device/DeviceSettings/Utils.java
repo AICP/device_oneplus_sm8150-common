@@ -30,10 +30,10 @@ import java.io.IOException;
 import java.lang.NullPointerException;
 import java.lang.SecurityException;
 
-public final class FileUtils {
-    private static final String TAG = "FileUtils";
+public final class Utils {
+    private static final String TAG = "Utils";
 
-    private FileUtils() {
+    private Utils() {
         // This class is not supposed to be instantiated
     }
 
