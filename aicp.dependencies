@@ -28,5 +28,10 @@
     "repository":  "LineageOS/android_device_oneplus_common",
     "target_path": "device/oneplus/common",
     "branch":      "lineage-17.1"
+  },
+  {
+    "repository":  "AICP/device_twrp",
+    "target_path": "device/twrp/guacamole",
+    "branch":      "guacamole"
   }
 ]
