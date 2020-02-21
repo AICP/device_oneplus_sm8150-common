@@ -52,6 +52,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.bt.aac_frm_ctl.enabled=true \
     vendor.qcom.bluetooth.soc=cherokee
 
+# Certification
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.build.release_type=release \
+    ro.vendor.build.real.device=true
+
 # Crypto
  PRODUCT_PROPERTY_OVERRIDES += \
     ro.crypto.allow_encrypt_override=true \
@@ -129,7 +134,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # NFC
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.camera.notify_nfc=1 \
+    ro.camera.notify_nfc=0 \
     ro.hardware.nfc_nci=nqx.default \
     ro.vendor.nfc.notify_tp=1
 

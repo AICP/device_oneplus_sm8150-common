@@ -32,6 +32,7 @@ ENABLE_CPUSETS := true
 ENABLE_SCHEDBOOST := true
 # Disable secure discard
 BOARD_SUPPRESS_SECURE_ERASE := true
+BOARD_HAS_LARGE_FILESYSTEM := true
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := msmnile
@@ -41,8 +42,9 @@ TARGET_USES_UEFI := true
 # Kernel
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom androidboot.console=ttyMSM0 androidboot.memcg=1 lpm_levels.sleep_disabled=1 video=vfb:640x400,bpp=32,memsize=3072000 msm_rtb.filter=0x237 service_locator.enable=1 swiotlb=2048 firmware_class.path=/vendor/firmware_mnt/image loop.max_part=7 androidboot.usbcontroller=a600000.dwc3
-# Necessary for OTA checking only (temporarily)
-BOARD_KERNEL_CMDLINE += androidboot.vbmeta.avb_version=1.0
+# Necessary for OTA checking
+#BOARD_KERNEL_CMDLINE += androidboot.avb_version=1.0 androidboot.vbmeta.avb_version=1.0
+#BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_IMAGE_NAME := Image-dtb
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_SEPARATED_DTBO := true
@@ -53,6 +55,7 @@ BOARD_ROOT_EXTRA_SYMLINKS := /vendor/dsp:/dsp /vendor/firmware_mnt:/firmware /ve
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_CLANG_COMPILE := true
 TARGET_KERNEL_HEADER_ARCH := arm64
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 TARGET_KERNEL_SOURCE := kernel/oneplus/sm8150
 # for Q: TARGET_KERNEL_CLANG_VERSION := r365631c
 TARGET_KERNEL_CLANG_VERSION := 9.0.8
@@ -63,6 +66,8 @@ QCOM_BOARD_PLATFORMS += msmnile
 TARGET_BOARD_PLATFORM := msmnile
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno640
 TARGET_USES_HARDWARE_QCOM_BOOTCTRL := true
+TARGET_USES_ION := true
+TARGET_USES_NEW_ION_API :=true
 TARGET_USES_QCOM_BSP := false
 
 # Properties
@@ -100,10 +105,14 @@ BOARD_USES_QCNE := true
 # Dexpreopt
 ifeq ($(HOST_OS),linux)
   ifneq ($(TARGET_BUILD_VARIANT),eng)
-    WITH_DEXPREOPT ?= true
+    WITH_DEXPREOPT := true
+    WITH_DEXPREOPT_DEBUG_INFO := false
+    USE_DEX2OAT_DEBUG := false
+    DONT_DEXPREOPT_PREBUILTS := true
+    WITH_DEXPREOPT_PIC := true
+    WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := true
   endif
 endif
-WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY ?= true
 
 # Display
 MAX_VIRTUAL_DISPLAY_DIMENSION := 4096
@@ -161,6 +170,8 @@ BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 BOARD_FLASH_BLOCK_SIZE := 262144 # (BOARD_KERNEL_PAGESIZE * 64)
 TARGET_COPY_OUT_VENDOR := vendor
+TARGET_USERIMAGES_USE_EXT4 := true
+TARGET_USERIMAGES_USE_F2FS := true
 TARGET_USES_MKE2FS := true
 
 # Power
@@ -173,16 +184,11 @@ TARGET_WLAN_POWER_STAT := "/sys/kernel/wlan/power_stats"
 BOARD_USES_RECOVERY_AS_BOOT := true
 TARGET_NO_RECOVERY := true
 TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
-TARGET_USERIMAGES_USE_EXT4 := true
-TARGET_USERIMAGES_USE_F2FS := true
 
 # RIL
 ENABLE_VENDOR_RIL_SERVICE := true
 TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
 TARGET_RIL_VARIANT := caf
-
-# Security patch level
-VENDOR_SECURITY_PATCH := 2019-08-05
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
@@ -196,7 +202,9 @@ SOONG_CONFIG_NAMESPACES += ONEPLUS_MSMNILE_SENSORS
 SOONG_CONFIG_ONEPLUS_MSMNILE_SENSORS := ALS_POS_X ALS_POS_Y
 
 # Soong namespaces
-PRODUCT_SOONG_NAMESPACES += $(VENDOR_PATH)
+PRODUCT_SOONG_NAMESPACES += \
+    $(VENDOR_PATH) \
+    $(VENDOR_PATH)/tri-state-key
 
 # Telephony
 TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
