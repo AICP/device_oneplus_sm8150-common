@@ -173,6 +173,14 @@ on boot
     chown bluetooth net_bt /sys/class/rfkill/rfkill0/device/extldo
     chmod 0660 /sys/class/rfkill/rfkill0/device/extldo
 
+    # Wake Gestures
+    chown system system /sys/android_touch/doubletap2wake
+    chmod 0664 /sys/android_touch/doubletap2wake
+    chown system system /sys/android_touch/sweep2sleep
+    chmod 0664 /sys/android_touch/sweep2sleep
+    chown system system /sys/android_touch/sweep2wake
+    chmod 0664 /sys/android_touch/sweep2wake
+
     # This location is used by QCRIL to host UNIX domain
     # socket files used for internal IPC within QCRIL
     # modules
