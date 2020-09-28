@@ -1,8 +1,8 @@
 [
     {
-      "repository":"AICP/proprietary_vendor_oneplus",
+      "repository":"Claymore1297/proprietary_vendor_oneplus",
       "target_path":"vendor/oneplus",
-      "branch":"p9.0"
+      "branch":"q10.0"
     },
     {
       "repository":"AICP/kernel_oneplus_sm8150",
