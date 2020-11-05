@@ -15,6 +15,16 @@ func bootctrlFlags(ctx android.BaseContext) []string {
         cflags = append(cflags, "-DUSE_DYNAMIC_PARTITIONS")
     }
     return cflags
+
+    if strings.HasPrefix(deviceName, "hotdogb") {
+        cflags = append(cflags, "-DUSE_DYNAMIC_PARTITIONS")
+    }
+    return cflags
+
+    if strings.HasPrefix(deviceName, "hotdogg") {
+        cflags = append(cflags, "-DUSE_DYNAMIC_PARTITIONS")
+    }
+    return cflags
 }
 
 func bootctrlLibrary(ctx android.LoadHookContext) {
