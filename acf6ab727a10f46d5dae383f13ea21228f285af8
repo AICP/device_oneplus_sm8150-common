@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7147b3a1_8ff13cd5",
+        "filename": "soong/bootctrl.go",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1375
+      },
+      "writtenOn": "2020-11-06T10:39:20Z",
+      "side": 1,
+      "message": "maybe we can use here case instead of those if\u0027es ;-)",
+      "revId": "acf6ab727a10f46d5dae383f13ea21228f285af8",
+      "serverId": "9f904cbb-a964-4fab-a7dc-5cfc4d5c238b",
+      "unresolved": true
+    }
+  ]
+}
