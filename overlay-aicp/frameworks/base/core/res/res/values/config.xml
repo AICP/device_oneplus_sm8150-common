@@ -61,7 +61,6 @@
     <!-- Does the device have a notification/battery LED? -->
     <bool name="config_deviceHasLED">false</bool>
 
-
     <!-- Is the notification LED intrusive? Used to decide if there should be a disable option -->
     <bool name="config_intrusiveNotificationLed">false</bool>
 
@@ -78,6 +77,10 @@
 
     <!-- Boost the brightness on a triple press of the power button -->
     <integer name="config_triplePressOnPowerBehavior">2</integer>
+
+    <!-- Live Captions via Google Device Personalization Services -->
+    <string name="config_defaultSystemCaptionsManagerService">com.google.android.as/com.google.android.apps.miphone.aiai.captions.SystemCaptionsManagerService</string>
+    <string name="config_defaultSystemCaptionsService">com.google.android.as/com.google.android.apps.miphone.aiai.captions.CaptionsService</string>
 
     <!-- Whether device has screen with higher aspect ratio -->
     <bool name="config_haveHigherAspectRatioScreen">true</bool>
