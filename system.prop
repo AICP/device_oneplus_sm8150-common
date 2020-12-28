@@ -25,6 +25,9 @@ persist.sys.camera.preview.size=1920x1080
 # CNE
 persist.vendor.cne.feature=1
 
+# Charger
+ro.charger.enable_suspend=true
+
 # CoreSight STM
 persist.debug.coresight.config=stm-events
 
