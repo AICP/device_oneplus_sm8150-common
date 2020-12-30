@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "27b3b807_2c6e2cbb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 343
+      },
+      "writtenOn": "2020-12-30T12:47:05Z",
+      "side": 1,
+      "message": "It will not \"hurt\" on A10.",
+      "revId": "3add565a033401a8cab148fc66514aac734eb67b",
+      "serverId": "9f904cbb-a964-4fab-a7dc-5cfc4d5c238b"
+    }
+  ]
+}
