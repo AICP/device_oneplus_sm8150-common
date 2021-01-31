@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d50daa27_7573fe63",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1375
+      },
+      "writtenOn": "2021-01-31T11:58:02Z",
+      "side": 1,
+      "message": "you need this:\nalias repopicklos\u003d\u0027repopick -g https://review.lineageos.org -f\u0027\n\nrepopicklos 289635\nrepopicklos 292868 -P hardware/qcom-caf/sm8150/media\nrepopicklos 292869 -P hardware/qcom-caf/sm8150/audio\nrepopicklos 292939 -P hardware/qcom-caf/sm8150/display\n\nhttps://github.com/Claymore1297/kernel_oneplus_sm8150\nhttps://github.com/Claymore1297/proprietary_vendor_oneplus",
+      "revId": "3a829781356ace392ea809e3c0e2b3003538c991",
+      "serverId": "9f904cbb-a964-4fab-a7dc-5cfc4d5c238b"
+    }
+  ]
+}
