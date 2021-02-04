@@ -25,6 +25,8 @@ allow hal_sensors_default hal_graphics_allocator_hwservice:hwservice_manager fin
 # Allow hal_sensors_default to find hal_graphics_mapper_hwservice
 allow hal_sensors_default hal_graphics_mapper_hwservice:hwservice_manager find;
 
+allow hal_sensors_default proc:file rw_file_perms;
+
 # Allow hal_sensors_default to find surfaceflinger_service
 allow hal_sensors_default surfaceflinger_service:service_manager find;
 
