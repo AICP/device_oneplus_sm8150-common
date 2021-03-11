@@ -108,6 +108,13 @@ on post-fs
 
 on late-fs
     mount_all /vendor/etc/fstab.qcom --late
+ # Battery Health
+    chown system system /sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-02/c440000.qcom,spmi:qcom,pm8150b@2:qcom,qpnp-smb5/power_supply/battery/batt_rm
+    chmod 0644 /sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-02/c440000.qcom,spmi:qcom,pm8150b@2:qcom,qpnp-smb5/power_supply/battery/batt_rm
+    chown system system /sys/class/power_supply/bms/charge_full_design
+    chmod 0644 /sys/class/power_supply/bms/charge_full_design
+    chown system system /sys/class/power_supply/bms/cycle_counts
+    chmod 0644 /sys/class/power_supply/bms/cycle_counts
 
 on early-boot
     start vendor.sensors
