@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f1c4b7bc_ac92a78e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1375
+      },
+      "writtenOn": "2021-03-14T12:50:18Z",
+      "side": 1,
+      "message": "battery_health works too now. needs this https://github.com/Claymore1297/kernel_oneplus_sm8150/commit/b920f33d8427c939823534b4f266d6fe0545fc2c after some testing will push to our kernel",
+      "revId": "21cf425831a817a714a14555a1842ffba0e37696",
+      "serverId": "9f904cbb-a964-4fab-a7dc-5cfc4d5c238b"
+    }
+  ]
+}
