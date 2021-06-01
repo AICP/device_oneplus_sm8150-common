@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f8f126bb_0b8d7bd7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1375
+      },
+      "writtenOn": "2021-06-01T08:34:56Z",
+      "side": 1,
+      "message": "we can do a followup-commit, to add back the branches with \"Ralfi-style\" ;-)",
+      "revId": "dd20aa06b27fbbbed28aa42923c580ac23e7c0fe",
+      "serverId": "9f904cbb-a964-4fab-a7dc-5cfc4d5c238b"
+    }
+  ]
+}
