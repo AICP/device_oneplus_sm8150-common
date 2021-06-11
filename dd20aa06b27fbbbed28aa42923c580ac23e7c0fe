@@ -16,6 +16,24 @@
       "message": "we can do a followup-commit, to add back the branches with \"Ralfi-style\" ;-)",
       "revId": "dd20aa06b27fbbbed28aa42923c580ac23e7c0fe",
       "serverId": "9f904cbb-a964-4fab-a7dc-5cfc4d5c238b"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1b441873_f77f8e8a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 343
+      },
+      "writtenOn": "2021-06-11T18:56:32Z",
+      "side": 1,
+      "message": "hum... gitlab?",
+      "parentUuid": "f8f126bb_0b8d7bd7",
+      "revId": "dd20aa06b27fbbbed28aa42923c580ac23e7c0fe",
+      "serverId": "9f904cbb-a964-4fab-a7dc-5cfc4d5c238b"
     }
   ]
 }
