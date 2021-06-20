@@ -16,6 +16,24 @@
       "message": "but isn\u0027t it the default??",
       "revId": "925521c56054177544e811b3bc442b0878bac455",
       "serverId": "9f904cbb-a964-4fab-a7dc-5cfc4d5c238b"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "553fd9d5_e5374887",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 343
+      },
+      "writtenOn": "2021-06-20T06:28:11Z",
+      "side": 1,
+      "message": "Haha, yeah. Those are the default values, but we cannot change them in the doze package. But the sensors can be overlayed as Ali kindly shared.\nI am old and forget things, but for example for doc a change was needed.\nSo, we do not really need to merge it, but keep it as a reference. That\u0027s all. 😊",
+      "parentUuid": "28e82c1c_b2fa7fd9",
+      "revId": "925521c56054177544e811b3bc442b0878bac455",
+      "serverId": "9f904cbb-a964-4fab-a7dc-5cfc4d5c238b"
     }
   ]
 }
