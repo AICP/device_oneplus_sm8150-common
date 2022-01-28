@@ -375,11 +375,11 @@ PRODUCT_PACKAGES += \
     libstagefrighthw
 
 # OnePlus
-PRODUCT_PACKAGES += \
-    oneplus-fwk.oneplus_msmnile
+#PRODUCT_PACKAGES += \
+#    oneplus-fwk.oneplus_msmnile
 
-PRODUCT_BOOT_JARS += \
-    oneplus-fwk.oneplus_msmnile
+#PRODUCT_BOOT_JARS += \
+#    oneplus-fwk.oneplus_msmnile
 
 # Power
 PRODUCT_PACKAGES += \
@@ -478,9 +478,9 @@ PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service
 
 # Vendor mockup
-PRODUCT_PACKAGES += oneplus-mock
+#PRODUCT_PACKAGES += oneplus-mock
 
-PRODUCT_BOOT_JARS += oneplus-mock
+#PRODUCT_BOOT_JARS += oneplus-mock
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/etc/permissions/privapp-permissions-oem-system.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-oem-system.xml \
@@ -544,8 +544,8 @@ PRODUCT_PACKAGES += \
     libnl \
     libwfdaac_vendor
 
-PRODUCT_BOOT_JARS += \
-    WfdCommon
+#PRODUCT_BOOT_JARS += \
+#    WfdCommon
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/etc/permissions/wfd-system-ext-privapp-permissions-qti.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/wfd-system-ext-privapp-permissions-qti.xml
