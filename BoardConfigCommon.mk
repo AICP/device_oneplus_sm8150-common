@@ -100,7 +100,7 @@ TARGET_CAMERA_NEEDS_CLIENT_INFO := true
 BOARD_GLOBAL_CFLAGS += -DBATTERY_REAL_INFO
 
 # FOD
-TARGET_SURFACEFLINGER_UDFPS_LIB := //device/oneplus/sm8150-common:libudfps_extension.oneplus
+TARGET_SURFACEFLINGER_UDFPS_LIB := //device/oneplus/common:libudfps_extension.oneplus
 
 # Display
 MAX_VIRTUAL_DISPLAY_DIMENSION := 4096
