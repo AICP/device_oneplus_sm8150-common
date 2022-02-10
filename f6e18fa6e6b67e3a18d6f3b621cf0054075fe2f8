@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1727f8e4_96c32f18",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3
+      },
+      "writtenOn": "2022-02-10T11:46:49Z",
+      "side": 1,
+      "message": "You need https://gerrit.aicp-rom.com/c/AICP/platform_manifest/+/113386 for this too...",
+      "revId": "f6e18fa6e6b67e3a18d6f3b621cf0054075fe2f8",
+      "serverId": "9f904cbb-a964-4fab-a7dc-5cfc4d5c238b"
+    }
+  ]
+}
