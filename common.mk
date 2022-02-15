@@ -426,6 +426,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     als_correction_service.oneplus_msmnile \
     android.hardware.sensors@2.0-service.oneplus_msmnile \
+    android.hardware.audio@4.0.vendor:64 \
     libsensorndkbridge
 
 # Servicetracker
