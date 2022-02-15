@@ -16,6 +16,24 @@
       "message": "we already talked about it. but is it only the 64 bit that we need? if yes, merge it. 😉",
       "revId": "8c57f2852695378d0854ead3b59cef2a2fd5c6ff",
       "serverId": "9f904cbb-a964-4fab-a7dc-5cfc4d5c238b"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4edffb6a_6519e80b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1375
+      },
+      "writtenOn": "2022-02-15T19:59:45Z",
+      "side": 1,
+      "message": "yes, only 64 bits, see:\nhttps://github.com/AICP/device_oneplus_sm8150-common/blob/r11.1/sensors/HalProxy.cpp#L504",
+      "parentUuid": "9bb038c9_686bc7b4",
+      "revId": "8c57f2852695378d0854ead3b59cef2a2fd5c6ff",
+      "serverId": "9f904cbb-a964-4fab-a7dc-5cfc4d5c238b"
     }
   ]
 }
