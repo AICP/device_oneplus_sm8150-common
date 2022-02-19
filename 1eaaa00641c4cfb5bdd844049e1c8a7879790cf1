@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0609dacb_c55236e9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 343
+      },
+      "writtenOn": "2022-02-19T10:22:19Z",
+      "side": 1,
+      "message": "Julian, is this not needed?\ngenfscon sysfs /devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/auth_status u:object_r:sysfs_fod:s0",
+      "revId": "1eaaa00641c4cfb5bdd844049e1c8a7879790cf1",
+      "serverId": "9f904cbb-a964-4fab-a7dc-5cfc4d5c238b"
+    }
+  ]
+}
