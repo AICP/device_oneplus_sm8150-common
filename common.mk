@@ -1,4 +1,4 @@
-#
+
 # Copyright (C) 2018-2019 The LineageOS Project
 #
 # SPDX-License-Identifier: Apache-2.0
@@ -246,10 +246,6 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.display.mapper@2.0.vendor \
     vendor.qti.hardware.display.mapper@3.0.vendor \
     vendor.qti.hardware.display.mapper@4.0.vendor
-
-# Doze
-PRODUCT_PACKAGES += \
-    OnePlusDoze
 
 # DRM
 PRODUCT_PACKAGES += \
