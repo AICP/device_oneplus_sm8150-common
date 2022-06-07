@@ -16,6 +16,24 @@
       "message": "Is it really needed? \nSets a bad precedent",
       "revId": "b2d9240a0bda4c0aa4c2bfd0428e90c99ae45bd2",
       "serverId": "9f904cbb-a964-4fab-a7dc-5cfc4d5c238b"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "81f39dc6_122efd60",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 343
+      },
+      "writtenOn": "2022-06-07T17:46:22Z",
+      "side": 1,
+      "message": "no, but I like it that way...",
+      "parentUuid": "7ec8b2d2_e873b92c",
+      "revId": "b2d9240a0bda4c0aa4c2bfd0428e90c99ae45bd2",
+      "serverId": "9f904cbb-a964-4fab-a7dc-5cfc4d5c238b"
     }
   ]
 }
