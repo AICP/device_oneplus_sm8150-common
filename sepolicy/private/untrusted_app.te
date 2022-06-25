@@ -1,2 +1,0 @@
-# Google camera
-allow untrusted_app rootfs:file { read getattr open };
