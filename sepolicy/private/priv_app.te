@@ -1,1 +1,0 @@
-allow priv_app gmscore_app:file { read getattr open };
