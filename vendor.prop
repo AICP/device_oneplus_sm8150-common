@@ -117,6 +117,9 @@ ro.soc.manufacturer=Qualcomm
 ro.soc.model=SM8150
 ro.vendor.bluetooth.wipower=false
 
+# Camera
+vendor.camera.aux.packageexcludelist=org.telegram.messenger,org.thunderdog.challegram
+
 # Crypto
 ro.crypto.volume.filenames_mode=aes-256-cts
 ro.crypto.allow_encrypt_override=true
