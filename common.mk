@@ -473,8 +473,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/etc/verizon-apns.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/verizon-apns.xml
 
 # AICP PartsBin
-PRODUCT_PACKAGES += \
-    PartsBin
+#PRODUCT_PACKAGES += \
+#    PartsBin
 
 # tri-state key
 PRODUCT_PACKAGES += \
