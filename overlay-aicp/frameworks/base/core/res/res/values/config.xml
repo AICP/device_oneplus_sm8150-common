@@ -55,5 +55,11 @@
 
     <!-- Whether device has screen with higher aspect ratio -->
     <bool name="config_haveHigherAspectRatioScreen">true</bool>
+
+     <!-- Model from a certified device -->
+    <string name="config_certifiedModel" translatable="false">Pixel 4 XL</string>
+
+    <!-- Fingerprint from a certified device against current platform SPL level -->
+    <string name="config_certifiedFingerprint" translatable="false">google/coral/coral:13/TP1A.221005.002/9012097:user/release-keys</string>
 </resources>
 
