@@ -1,0 +1,8 @@
+[
+  {
+    "remote":      "gitlab",
+    "repository": "hermesconrad/vendor/proprietary_vendor_ih8sn",
+    "target_path": "vendor/ih8sn",
+    "branch":      "t13.0"
+  }
+]
