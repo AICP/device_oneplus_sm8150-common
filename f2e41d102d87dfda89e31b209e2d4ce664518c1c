@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3b35e721_9d8b739a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 343
+      },
+      "writtenOn": "2022-11-27T07:34:40Z",
+      "side": 1,
+      "message": "...we usually did that in the device tree, not common. This way maintainers could choose the features.",
+      "revId": "f2e41d102d87dfda89e31b209e2d4ce664518c1c",
+      "serverId": "9f904cbb-a964-4fab-a7dc-5cfc4d5c238b"
+    }
+  ]
+}
