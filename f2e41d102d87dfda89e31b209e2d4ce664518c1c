@@ -16,6 +16,23 @@
       "message": "...we usually did that in the device tree, not common. This way maintainers could choose the features.",
       "revId": "f2e41d102d87dfda89e31b209e2d4ce664518c1c",
       "serverId": "9f904cbb-a964-4fab-a7dc-5cfc4d5c238b"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5015e1a1_66e9d624",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3
+      },
+      "writtenOn": "2022-11-27T17:41:33Z",
+      "side": 1,
+      "message": "Not needed. Can be abandoned.",
+      "revId": "f2e41d102d87dfda89e31b209e2d4ce664518c1c",
+      "serverId": "9f904cbb-a964-4fab-a7dc-5cfc4d5c238b"
     }
   ]
 }
