@@ -10,11 +10,5 @@
     "repository": "android_kernel_oneplus_sm8150",
     "target_path": "kernel/oneplus/sm8150"
     "branch":      "t13.0"
-  },
-  {
-    "remote":      "gitlab",
-    "repository": "hermesconrad/vendor/proprietary_vendor_ih8sn",
-    "target_path": "vendor/ih8sn",
-    "branch":      "t13.0"
   }
 ]
