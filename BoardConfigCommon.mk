@@ -162,6 +162,8 @@ BOARD_ROOT_EXTRA_SYMLINKS += /vendor/odm/vendor:/odm/vendor
 # Security
 VENDOR_SECURITY_PATCH := 2022-12-05
 
+SPOOF_FIRST_API_LEVEL_32 := true
+
 # SEPolicy
 include device/qcom/sepolicy_vndr/SEPolicy.mk
 include hardware/oplus/sepolicy/qti/SEPolicy.mk
