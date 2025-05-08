@@ -5,8 +5,7 @@
     "branch":      "lineage-22.2"
   },
   {
-    "repository": "LineageOS/android_kernel_oneplus_sm8150",
+    "repository": "AICP/kernel_oneplus_sm8150",
     "target_path": "kernel/oneplus/sm8150",
-    "branch":      "lineage-22.2"
   }
 ]
