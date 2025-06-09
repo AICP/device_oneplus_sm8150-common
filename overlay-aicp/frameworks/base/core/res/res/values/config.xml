@@ -8,4 +8,7 @@
     <bool name="config_hasVoocCharger">true</bool>
 
     <string name="config_oemFastChargerStatusPath" translatable="false">/sys/class/power_supply/battery/voocchg_ing</string>
+
+    <!-- Update battery info every second when device is charging -->
+    <bool name="config_alternateFastchargeInfoUpdate">true</bool>
 </resources>
