@@ -1,8 +1,7 @@
 [
   {
-    "repository": "LineageOS/android_hardware_oplus",
-    "target_path": "hardware/oplus",
-    "branch":      "lineage-22.2"
+    "repository": "AICP/android_hardware_oplus",
+    "target_path": "hardware/oplus"
   },
   {
     "repository": "LineageOS/android_kernel_oneplus_sm8150",
