@@ -1,2 +1,0 @@
-# Battery
-r_dir_file(system_server, sysfs_battery_supply)
