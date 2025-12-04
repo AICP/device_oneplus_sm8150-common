@@ -202,13 +202,13 @@ PRODUCT_ENABLE_UFFD_GC := true
 
 # Lineage Health
 PRODUCT_PACKAGES += \
-    vendor.aicp.health-service.default
+    vendor.lineage.health-service.default
 
-$(call soong_config_set,aicp_health,charging_control_charging_path,/sys/class/power_supply/battery/mmi_charging_enable)
+$(call soong_config_set,lineage_health,charging_control_charging_path,/sys/class/power_supply/battery/mmi_charging_enable)
 
 # LiveDisplay
 PRODUCT_PACKAGES += \
-    vendor.aicp.livedisplay-service.oplus
+    vendor.lineage.livedisplay-service.oplus
 
 $(call soong_config_set,OPLUS_LINEAGE_LIVEDISPLAY_HAL,ENABLE_AF,true)
 $(call soong_config_set,OPLUS_LINEAGE_LIVEDISPLAY_HAL,ENABLE_DM,true)
@@ -256,7 +256,7 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power-service.aicp-libperfmgr \
+    android.hardware.power-service.lineage-libperfmgr \
     libqti-perfd-client
 
 PRODUCT_COPY_FILES += \
@@ -271,7 +271,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf
 
 PRODUCT_PACKAGES += \
-    vendor.aicp.oplus_als.service \
+    vendor.lineage.oplus_als.service \
     android.hardware.sensors@2.1-service.oneplus_msmnile \
     sensors.oplus
 
@@ -289,7 +289,7 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/google/interfaces \
     hardware/google/pixel \
-    hardware/aicp/interfaces/power-libperfmgr \
+    hardware/lineage/interfaces/power-libperfmgr \
     hardware/oplus \
     hardware/qcom-caf/common/libqti-perfd-client
 
@@ -324,7 +324,7 @@ $(call inherit-product, hardware/oplus/oplus-fwk/oplus-fwk.mk)
 
 # Touch
 PRODUCT_PACKAGES += \
-    vendor.aicp.touch-service.oplus
+    vendor.lineage.touch-service.oplus
 
 $(call soong_config_set,OPLUS_LINEAGE_TOUCH_HAL,ENABLE_HTPR,false)
 $(call soong_config_set,OPLUS_LINEAGE_TOUCH_HAL,INCLUDE_DIR,$(LOCAL_PATH)/touch/include)
